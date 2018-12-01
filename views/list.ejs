@@ -1,0 +1,18 @@
+<HTML><BODY>
+<H1>Restaurants</H1>
+<H1>User: <%= username%></H1>
+<H1>Showing <%= c.length %> documents</H1>
+
+<form action="createRestaurant" method="get">
+	<input type="submit" value="Create New Restaurant" >
+</form>
+Name:
+<ol>
+  <% c.forEach(function(cafe) { %>
+  <li><a href=/showdetails?id=<%= cafe.id %>><%= cafe.name %></a></li>
+  <% });                        %>
+</ol>
+<form action="logout" method="get">
+	<input type="submit" value="Log Out" >
+</form>
+</BODY></HTML>

@@ -1,0 +1,16 @@
+{
+    "name": "server",
+    "description": "Mini Project For COMPS381F",
+    "author": "Lai Chak Fung , Lok Chung Huen 11958788",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "*",
+        "ejs": "*",
+        "body-parser": "*",
+        "cookie-session": "*"
+    },
+    "engine": "node >= 0.10.0",
+    "scripts": {
+        "start": "node server_ejs.js"
+    }
+}
