@@ -1,0 +1,31 @@
+<HTML>
+<BODY>
+<head>
+	<title>Update Restaurant</H1></title>
+</head>
+<H2>USER: <%= username%></H2>
+<form action='/updateRestaurant' method='post'>
+	Name: <input type="text" name="name" id="name" value=<%= c[0].Name%>><br/>
+	Borough: <input type="text" name="borough" id="borough" value=<%= c[0].Borough%>><br/>
+	Cuisine: <input type="text" name="cuisine" id="cuisine" value=<%= c[0].Cuisine%>><br/>
+	Photo: <input type="text" name="photo" id="photo" value=<%= c[0].Photo%>><br/><br/>
+<% x = c[0].Address %>
+	Address:<br/>	
+	 Street: <input type="text" name="street" id="street" value=<%= x.Street%>><br/>
+	 Building: <input type="text" name="building" id="building" value=<%= x.Building%>><br/>
+	 Zipcode: <input type="text" name="zipcode" id="zipcode" value=<%= x.Zipcode%>><br/>
+	<br/>
+<% y = x.coord %>
+	Coord:<br/>
+	 GPS Coordinates(lon.): <input type="number" name="gps1" id="gps1" value=<%= y.GPS1%>><br/>	
+	 GPS Coordinates(lat.): <input type="number" name="gps2" id="gps2" value=<%= y.GPS2%>><br/>
+	<br/>
+	<input type="submit" value="Update" >
+	<input type="text" name="h_id" value=<%= c[0]._id%>>
+</form>
+<br/>
+<form action="read" method="get">
+	<input type="submit" value="Return Home">
+</form>
+</BODY>
+</HTML>

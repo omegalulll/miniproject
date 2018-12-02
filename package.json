@@ -4,6 +4,7 @@
     "author": "Lai Chak Fung , Lok Chung Huen 11958788",
     "version": "0.0.1",
     "dependencies": {
+	"mongodb": "^2.2.33",
         "express": "*",
         "ejs": "*",
         "body-parser": "*",

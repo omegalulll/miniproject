@@ -1,15 +1,7 @@
 <HTML><BODY>
 <H1>Restaurants</H1>
-<H1>User: <%= username%></H1>
 <H1>Showing <%= c.length %> documents</H1>
 
-<form action="createRestaurant" method="get">
-	<input type="submit" value="Create New Restaurant" >
-</form>
-
-<form action="search" method="get">
-	<input type="submit" value="Search Page" >
-</form>
 Name:
 <ol>
   <% for(i in c) { %>

@@ -1,0 +1,21 @@
+<HTML>
+<BODY>
+<head>
+    <title>Search Restaurant</H1></title>
+</head>
+<H2>USER: <%= username%></H2>
+<H2>Search Restaurant</H2>
+<form action='/search' method='post'>
+    Name: <input type="text" name="name" id="name"><br/>
+    Borough: <input type="text" name="borough" id="borough"><br/>
+    Cuisine: <input type="text" name="cuisine" id="cuisine"><br/>
+    <h5>*notice only exact same result will be shown</h5> 
+    <input type="submit" value="Search" >
+</form>
+<br/>
+<script>
+function goBack() {window.history.back();}
+</script>
+<button onclick="goBack()">Go Back</button>
+</BODY>
+</HTML>

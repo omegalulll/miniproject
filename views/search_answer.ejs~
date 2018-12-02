@@ -1,0 +1,19 @@
+<HTML>
+<BODY>
+<head>
+    <title>Search Result</H1></title>
+</head>
+
+<H1>Name</H1>
+<ol>
+  <% for(i in c) { %>
+  <li><a href=/showdetails?_id=<%= c[i]._id %>><%= c[i].Name %></a></li>
+  <% } %>
+</ol>
+<br/>
+<script>
+function goBack() {window.history.back();}
+</script>
+<button onclick="goBack()">Go Back</button>
+</BODY>
+</HTML>

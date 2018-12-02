@@ -1,0 +1,18 @@
+<HTML>
+<BODY>
+<head>
+	<title>Create New Restaurant</H1></title>
+</head>
+<H2>USER: <%= username%></H2>
+<form action='/rateRestaurant' method='post'>
+	<input type="hidden" name="h_id" value=<%= c[0]._id%>>
+	rate: <input type="number" name="rate" id="rate" min="0" max="10">
+	<br/><br/><input type="submit" value="Rate" >
+</form>
+<br/>
+<script>
+function goBack() {window.history.back();}
+</script>
+<button onclick="goBack()">Go Back</button>
+</BODY>
+</HTML>

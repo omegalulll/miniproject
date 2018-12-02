@@ -1,26 +1,88 @@
 <HTML>
 <BODY>
 <head>
-  <title><%= c.name %></title>
+  <title><%= c[0].Name %></title>
 </head>
-
-<H2><%= c.name %></H2>
-<p>ID: <%= c.id %></p>
-<p>Price: <%= c.price %></p>
-<p>Stock: <%= c.stock %></p>
-<% if (c.photo != null) { %>
 <p>
-  <img src="data:<%= c.mimetype %>;base64,<%= c.photo %>">
+<H2><%= c[0].Name %></H2>
+<p>
+
+</p>
+<% if (c[0].Photo != null) { %>
+</p>
+<p>
+  <img src="data:<%= c.Mimetype %>;base64,<%= c[0].Photo %>">
 <br>
 <% } %>
+<p>Borough: 
+<% if(c[0].Borough != null){ %>
+<%= c[0].Borough %>
+<% } %>
+</p>
+<p>Cuisine: 
+<% if(c[0].Cuisine != null){ %>
+<%= c[0].Cuisine %>
+<% } %>
+</p>
 
-<a href="/remove?_id=" c.id" "style="text-decoration: none">
-  <button class="w3-btn w3-section w3-teal w3-ripple">Delete</button>
-</a>
+<% x = c[0].Address %>
+<p>Street: 
+<% if(x.Street != null){ %>
+<%= x.Street %>
+<% } %>
+</p>
+<p>Building: 
+<% if(x.Building != null){ %>
+<%= x.Building %>
+<% } %>
+</p>
+
+<p>Zipcode:
+<% if(x.Zipcode != null){ %>
+<%= x.Zipcode %>
+<% } %>
+</p>
+<% y = x.coord %>
+<p>
+<div id="map"></div>
+<p>
+<a href=/map?lat=<%= y.GPS1&&lon=y.GPS2 %>>Google Map</a>
+</p>
+<% if(y.GPS1 != null && y.GPS2 != null){ %>
+GPS: <%= y.GPS1 %> , <%= y.GPS2 %>
+<% } %>
+</p>
+
+
+
+<p>Rating:<br/>
+<% z = c[0].Grade %>
+<% for (i in z) {%>
+<%= z[i].score %> ( <%= z[i].user %> )
 <br/>
-<script>
-function goBack() {window.history.back();}
-</script>
-<button onclick="goBack()">Go Back</button>
+<% } %>
+</p>
+
+<p>Created By: <%= c[0].Owner %></p>
+
+<% deleteID= c[0]._id%>
+
+<p>
+<% if(c[0].Owner == username) { %>
+<a href=/deleteRestaurant?_id=<%= c[0]._id %>>Delete This</a>
+<% }%>
+</p>
+<p>
+<% if(c[0].Owner == username) { %>
+<a href=/updateRestaurant?_id=<%= c[0]._id %>>Update This</a>
+<% }%>
+</p>
+<p>
+<a href=/rateRestaurant?_id=<%= c[0]._id %>>Rate This</a>
+</p>
+<br/>
+<form action="read" method="get">
+	<input type="submit" value="Return Home">
+</form>
 </BODY>
 </HTML>

@@ -4,11 +4,11 @@
 	<title>Create New Restaurant</H1></title>
 </head>
 <H2>USER: <%= username%></H2>
-<form action='/createRestaurant' method='post' encType='multipart/form-data'>
-	Name: <input type="text" name="name" id="name"><br/>
-	Borough:	
+<form action='/createRestaurant' method='post'>
+	Name: <input type="text" name="name" id="name" required="required"><br/>
+	Borough: <input type="text" name="borough" id="borough"><br/>
 	Cuisine: <input type="text" name="cuisine" id="cuisine"><br/>
-	Photo: <input type="file" name="photo" id="photo"><br/><br/>
+	Photo: <input type="text" name="photo" id="photo"><br/><br/>
 	Address:<br/>	
 	 Street: <input type="text" name="street" id="street"><br/>
 	 Building: <input type="text" name="building" id="building"><br/>
@@ -21,9 +21,8 @@
 	<input type="submit" value="Create" >
 </form>
 <br/>
-<script>
-function goBack() {window.history.back();}
-</script>
-<button onclick="goBack()">Go Back</button>
+<form action="read" method="get">
+	<input type="submit" value="Return Home">
+</form>
 </BODY>
 </HTML>
